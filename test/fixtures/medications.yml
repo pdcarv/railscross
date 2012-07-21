@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  administration_time: MyString
+
+two:
+  description: MyText
+  administration_time: MyString

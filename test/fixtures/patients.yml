@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  nationality: MyString
+  identification_card_number: 1
+  age: 1
+  sex: MyString
+  national_healthcare_number: 1
+  diseases: MyText
+  alergys: MyText
+
+two:
+  name: MyString
+  nationality: MyString
+  identification_card_number: 1
+  age: 1
+  sex: MyString
+  national_healthcare_number: 1
+  diseases: MyText
+  alergys: MyText
