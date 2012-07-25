@@ -1,0 +1,27 @@
+%div.well
+  = form_for [@patient, @appointement], :html => { :class => 'form-horizontal' } do |f|
+    %fieldset
+      %div.control-group
+        = f.label :date, :class => 'control-label'
+        %div.controls
+          = f.datetime_select :date, {}, { :class => 'span1' }
+
+      %div.control-group
+        = f.label :notes, :class => 'control-label'
+        %div.controls
+          = f.text_area :notes, :rows => '2', :class => 'input-xlarge'
+
+      %br
+
+      %div.control-group
+        %div.controls
+          = f.fields_for :prescriptions do |prescription_form| 
+            %div.form-inline
+              = render 'prescription_fields', :f => prescription_form
+          %div.control-group
+            = link_to_add_association "Add Prescription", f, :prescriptions
+      
+      %div.form-actions
+        = f.submit :class => 'btn btn-primary' 
+        = link_to 'Cancel', :back, :class => 'btn btn-secondary'
+

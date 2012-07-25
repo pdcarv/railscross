@@ -1,0 +1,24 @@
+%div.page-header
+  %h1 Patients
+
+%table.table.table-bordered.table-striped
+  %thead
+    %tr
+      %th #
+      %th Name
+      %th Last Appointement
+  %tbody
+    - unless @patients.blank?
+      - @patients.each do |patient|
+        %tr{:onclick => "location.href='#{patient_path(patient)}'"}
+          %td= patient.id
+          %td= patient.name
+          %td
+            - if patient.appointements.blank?
+              %span{:class=>'label label-info'} 
+                %i{:class=>'icon-exclamation-sign'} 
+                  No appointements made
+            - else
+              = time_ago_in_words(patient.last_appointement_date) 
+
+= link_to 'Add Patient', new_patient_path, :class => 'btn btn-primary'

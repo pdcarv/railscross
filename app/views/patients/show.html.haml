@@ -1,0 +1,54 @@
+%div.row
+  %div.span6
+    %h1
+      = @patient.name
+      %small
+        = "#{@patient.sex},"
+        = "#{@patient.age} years old"
+  %div.span6
+    = link_to edit_patient_path(@patient), :class => 'btn' do
+      %i{ :class => 'icon-pencil' }
+      edit
+    = link_to patient_path(@patient), :class => 'btn', :method => :delete, :confirm => 'Are you sure you want to delete this patient?' do
+      %i{ :class => 'icon-trash' }
+      delete
+
+
+%div.row
+  %div.span12
+    %dl.dl-horizontal
+      %dt Identification Number
+      %dd= @patient.identification_card_number
+
+      %dt National Healthcare Number
+      %dd= @patient.national_healthcare_number
+
+      %dt Country
+      %dd= @patient.nationality
+
+      %dt Diseases
+      %dd= @patient.diseases
+
+      %dt Alergys
+      %dd= @patient.alergys
+      %hr
+
+%div.row
+  %div.span12
+    %ul.thumbnails
+      - unless @appointements.blank?
+        - @appointements.each do |appointement|
+          %li.span3
+            %div.thumbnail.well
+              %h5 
+                =time_ago_in_words(appointement.date)
+                - if appointement.change_medication
+                  %i{ :class => 'icon-random pull-right' } 
+              %br
+              %p= appointement.notes
+              %br
+              %p
+                = link_to 'edit', edit_patient_appointement_path(@patient, appointement), :class => 'btn btn-mini btn-info' 
+                = link_to 'delete', patient_appointement_path(@patient, appointement), :confirm => 'Are you sure you want to delete this appointement', :method => :delete, :class => 'btn btn-mini btn-danger'
+                
+    = link_to 'Add Appointement', new_patient_appointement_path(@patient), :class => 'btn btn-primary'  

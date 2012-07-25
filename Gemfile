@@ -7,16 +7,19 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 gem 'devise', '~> 2.1.2'
-
+gem 'country_select'
+gem 'cocoon', "~> 1.0.22"
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'haml', '~> 3.1.6'
+  gem 'less',   '~> 2.2.1'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
+  gem 'twitter-bootstrap-rails', '~> 2.1.1'
 
   gem 'uglifier', '>= 1.0.3'
 end

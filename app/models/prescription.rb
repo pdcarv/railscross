@@ -1,4 +1,4 @@
-class Medication < ActiveRecord::Base
+class Prescription < ActiveRecord::Base
   attr_accessible :administration_time, :description
 
   belongs_to :appointement

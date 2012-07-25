@@ -1,0 +1,47 @@
+%div.well
+  = form_for @patient, :html => { :class => 'form-horizontal' } do |f|
+    %fieldset
+      %div.control-group
+        = f.label :name, :class => 'control-label'
+        %div.controls
+          = f.text_field :name, :class => 'input-xlarge'
+
+      %div.control-group
+        = f.label :age, :class => 'control-label'
+        %div.controls
+          = f.number_field :age, :class => 'span1'
+
+      %div.control-group
+        = f.label :gender, :class => 'control-label'
+        %div.controls
+          = f.select :sex, %w(male female)
+
+      %div.control-group
+        = f.label :bi, :class => 'control-label'
+        %div.controls
+          = f.number_field :identification_card_number
+
+      %div.control-group
+        = f.label :national_healthcare, :class => 'control-label'
+        %div.controls
+          = f.number_field :national_healthcare_number
+
+      %div.control-group
+        = f.label :country, :class => 'control-label'
+        %div.controls
+          = f.country_select :nationality, ['Portugal']
+
+      %div.control-group
+        = f.label :diseases, :class => 'control-label'
+        %div.controls
+          = f.text_area :diseases, :rows => '2', :class => 'input-xlarge'
+
+      %div.control-group
+        = f.label :alergys, :class => 'control-label'
+        %div.controls
+          = f.text_area :alergys, :rows => '2', :class => 'input-xlarge'
+
+      %div.form-actions
+        = f.submit :class => 'btn btn-primary' 
+        = link_to 'Cancel', :back, :class => 'btn btn-secondary'
+

@@ -1,0 +1,6 @@
+%div.nested-fields
+  %p
+    = f.select :administration_time, %w(breakfast lunch dinner evening), {}, { :class => 'span2' }
+    = f.text_field :description, :placeholder => 'Medication'
+    = link_to_remove_association 'Delete', f
+
