@@ -19,18 +19,16 @@ gem 'country_select'
 gem 'cocoon', "~> 1.0.22"
 gem 'twitter-bootstrap-rails', '~> 2.1.1'
 
-# Note: removed outside assets group to fix heroku deployment
-gem 'coffee-rails', '~> 3.2.1'
-gem 'uglifier', '>= 1.0.3'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'haml-rails', '~> 0.3.4'
   gem 'less', '~> 2.2.1'
-
+  gem 'thin', '~> 1.4.1'
+  gem 'coffee-rails', '~> 3.2.1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
+  gem 'uglifier', '>= 1.0.3'
 end
 
 gem 'jquery-rails'
