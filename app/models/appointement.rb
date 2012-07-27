@@ -8,6 +8,8 @@ class Appointement < ActiveRecord::Base
   before_save :prescriptions_changed?
 
   def prescriptions_changed?
+    return if self.patient.appointements.empty?
+
     lp = self.patient.last_appointement.prescriptions 
     tp = self.prescriptions
 
