@@ -3,10 +3,10 @@ class CreatePatients < ActiveRecord::Migration
     create_table :patients do |t|
       t.string :name
       t.string :nationality
-      t.integer :identification_card_number
+      t.integer :identification_card_number, :limit => 8
       t.integer :age
       t.string :sex
-      t.integer :national_healthcare_number
+      t.integer :national_healthcare_number, :limit => 8
       t.text :diseases
       t.text :alergys
 
