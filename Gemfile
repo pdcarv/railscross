@@ -9,15 +9,12 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-group :production do 
-  gem 'pg'
-end
-
 # Gems added by me to this project
 gem 'devise', '~> 2.1.2'
 gem 'country_select'
 gem 'cocoon', "~> 1.0.22"
 gem 'twitter-bootstrap-rails', '~> 2.1.1'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
