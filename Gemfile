@@ -13,9 +13,11 @@ group :production do
   gem 'pg'
 end
 
+# Gems added by me to this project
 gem 'devise', '~> 2.1.2'
 gem 'country_select'
 gem 'cocoon', "~> 1.0.22"
+gem 'twitter-bootstrap-rails', '~> 2.1.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,8 +28,6 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-  gem 'twitter-bootstrap-rails', '~> 2.1.1'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
