@@ -24,7 +24,6 @@ gem 'twitter-bootstrap-rails', '~> 2.1.1'
 group :assets do
   gem 'haml', '~> 3.1.6'
   gem 'less', '~> 2.2.1'
-  gem 'sass', '~> 3.1.20'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
